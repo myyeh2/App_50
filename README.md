@@ -42,7 +42,7 @@
   
 <!--         ##### \[ Part \; 1 \]    -->   
 <!--    ![](Images/11-30-09.png)     -->   
-##### $$Part \; 2$$
+##### $$Part \quad 2$$
 
 ####
 
@@ -125,11 +125,14 @@ $ \color{red} C(t) = \begin{bmatrix} 35 & -1-13.2 \times sin(0.35 \times t) & -0
 
 ##  
 
-# $$本實例程式碼請參見本儲存庫$$ 
+# $$本實例程式碼 \quad 請參見本儲存庫$$ 
 
 ## $$已知實例如下 ：$$
 
-# $$y(t) = \begin{Bmatrix} cos(1 X \pi X t ) \\\\ cos(3 X \pi X t) \\\\ cos(2 X \pi X t) \end{Bmatrix} \quad t \geq 0$$ 
+<!--  
+# $$\color{Red} y(t) = \begin{Bmatrix} cos(1 \times \pi \times t ) \\\\ cos(3 \times \pi \times t) \\\\ cos(2 \times \pi \times t) \end{Bmatrix} \quad t \geq 0$$   
+--> 
+![](Images/02-06-03.png)  
 
 ##  [參見 https://en.wikipedia.org/wiki/Time-frequency_analysis](https://en.wikipedia.org/wiki/Time-frequency_analysis)  
 
