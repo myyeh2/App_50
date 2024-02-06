@@ -124,31 +124,32 @@ $ \color{red} C(t) = \begin{bmatrix} 35 & -1-13.2 \times sin(0.35 \times t) & -0
 -->
 
 
-# $$本實例程式碼\;請參見本儲存庫$$ 
+# $$本實例程式碼請參見本儲存庫$$ 
 
 ## $$已知實例如下 ：$$
 
-# $$y(t) = \begin{Bmatrix} cos(\pi \; t ) \\ cos(3 \; \pi \; t) \\ cos(2 \; \pi \; t) \end{Bmatrix} \quad t \geq 0 $$ 
+# $$y(t) = \begin{Bmatrix} cos(\pi \; t ) \\ cos(3 \; \pi \; t) \\ cos(2 \; \pi \; t) \end{Bmatrix} \quad t \geq 0$$ 
 
 ##  [參見 https://en.wikipedia.org/wiki/Time-frequency_analysis](https://en.wikipedia.org/wiki/Time-frequency_analysis)  
 
-#####  $https://en.wikipedia.org/wiki/Time-frequency\_analysis$ 
+###  $$https://en.wikipedia.org/wiki/Time-frequency---analysis$$ 
 
 
 #
-# **結$\quad$論$\quad$如$\quad$下 ：**
 
-### **1. $\;$y是輸出響應值。** 
+# $$結 論 如 下 ：$$
 
-### **2. $\;$已知角頻率分別是$\; \pi，3\pi，和2\pi$，故不是好的時頻，數值計算的實例。**
+### **1. y是輸出響應值。** 
 
-### **3. $\;$參見App_48儲存庫，由微分方程式，求得實數系統矩陣A，再求得複數特徵值矩陣D，和複數特徵向量矩陣Q。**  
+### **2. 已知角頻率分別是 1 X Pi，3 X Pi，和 2 X Pi，故不是好的時頻，數值計算的實例。**
 
-### **4. $\;$特徵值的虛數部分即角頻率。**  
+### **3. 參見App_48儲存庫，由微分方程式，求得實數系統矩陣A，再求得複數特徵值矩陣D，和複數特徵向量矩陣Q。**  
 
-### **5. $\;$使用Hexp(D, Q, t)轉換矩陣【系由本人推導和CSharp程式碼撰寫】。**
+### **4. 特徵值的虛數部分即角頻率。**  
 
-### **6. $\;$求得多個不同狀態變數的響應值，參見$\;$App_6J ... App_48$\;$儲存庫中的程式碼**
+### **5. 使用Hexp(D, Q, t)轉換矩陣【系由本人推導和CSharp程式碼撰寫】。**
+
+### **6. 求得多個不同狀態變數的響應值，參見 App_6J ... App_48 儲存庫中的程式碼**
 
 
 ###  
