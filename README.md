@@ -50,7 +50,7 @@
 
 # $$時\quad頻\quad數\quad值\quad計\quad算$$   
 
-### $$ Precisely \quad Time-Frequency \quad Numerical \quad Computations $$  
+### $$Precisely \; Time \; Frequency \; Numerical \; Computations$$  
 
 
 <!--      
@@ -128,16 +128,13 @@ $ \color{red} C(t) = \begin{bmatrix} 35 & -1-13.2 \times sin(0.35 \times t) & -0
 
 ## $$已知實例如下 ：$$
 
-# $$y(t) = \begin{Bmatrix} cos(\pi \; t ) \\ cos(3 \; \pi \; t) \\ cos(2 \; \pi \; t) \end{Bmatrix} \quad t \geq 0$$ 
+# $$y(t) = \begin{Bmatrix} cos(\pi \; t ) \\\\ cos(3 \; \pi \; t) \\\\ cos(2 \; \pi \; t) \end{Bmatrix} \quad t \geq 0$$ 
 
 ##  [參見 https://en.wikipedia.org/wiki/Time-frequency_analysis](https://en.wikipedia.org/wiki/Time-frequency_analysis)  
 
-###  $$https://en.wikipedia.org/wiki/Time-frequency---analysis$$ 
+## 
 
-
-#
-
-# $$結 論 如 下 ：$$
+# $$結 \qquad 論 \qquad 如 \qquad 下 ：$$
 
 ### **1. y是輸出響應值。** 
 
@@ -145,7 +142,7 @@ $ \color{red} C(t) = \begin{bmatrix} 35 & -1-13.2 \times sin(0.35 \times t) & -0
 
 ### **3. 參見App_48儲存庫，由微分方程式，求得實數系統矩陣A，再求得複數特徵值矩陣D，和複數特徵向量矩陣Q。**  
 
-### **4. 特徵值的虛數部分即角頻率。**  
+### **4. 特徵值矩陣的虛數部分即角頻率。**  
 
 ### **5. 使用Hexp(D, Q, t)轉換矩陣【系由本人推導和CSharp程式碼撰寫】。**
 
