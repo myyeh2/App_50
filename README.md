@@ -50,7 +50,7 @@
 
 # $$時\quad頻\quad數\quad值\quad計\quad算$$   
 
-### $$Precisely \; Time \; Frequency \; Numerical \; Computations$$  
+### $$Precisely \quad Time \quad Frequency \quad Numerical \quad Computations$$  
 
 
 <!--      
@@ -123,16 +123,17 @@ $ \color{red} C(t) = \begin{bmatrix} 35 & -1-13.2 \times sin(0.35 \times t) & -0
 #####################################################################################
 -->
 
+##  
 
 # $$本實例程式碼請參見本儲存庫$$ 
 
 ## $$已知實例如下 ：$$
 
-# $$y(t) = \begin{Bmatrix} cos(\pi \; t ) \\\\ cos(3 \; \pi \; t) \\\\ cos(2 \; \pi \; t) \end{Bmatrix} \quad t \geq 0$$ 
+# $$y(t) = \begin{Bmatrix} cos(1 X \pi X t ) \\\\ cos(3 X \pi X t) \\\\ cos(2 X \pi X t) \end{Bmatrix} \quad t \geq 0$$ 
 
 ##  [參見 https://en.wikipedia.org/wiki/Time-frequency_analysis](https://en.wikipedia.org/wiki/Time-frequency_analysis)  
 
-## 
+#   
 
 # $$結 \qquad 論 \qquad 如 \qquad 下 ：$$
 
@@ -148,8 +149,7 @@ $ \color{red} C(t) = \begin{bmatrix} 35 & -1-13.2 \times sin(0.35 \times t) & -0
 
 ### **6. 求得多個不同狀態變數的響應值，參見 App_6J ... App_48 儲存庫中的程式碼**
 
-
-###  
+#  
 
 ---  
 
