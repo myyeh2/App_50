@@ -17,41 +17,36 @@
 <!--   
 ## \[{ \color{Fuchsia} Time-Frequency-Signal \;(Response) \quad Solution  }\] 
 -->
-![](Images/11-30-01.png)    
+![](Images/11-30-01.png)  
 
  
 <!--     ##### \[ using \]   -->
-<!--  ![](Images/11-30-07.png)  -->   
-##### $$using$$
+![](Images/11-30-07.png)  
 
 <!--   
 ## \[  \color{Red} Precisely \; Numerical \; Value \; Computations  \]  
 -->  
-![](Images/11-30-02.png) 
+![](Images/11-30-02.png)  
 
-  
-<!--     ##### \[ with \]   -->   
-<!--    ![](Images/11-30-08.png)   -->   
-##### $$with$$
+<!--     ##### \[ with \]   -->  
+![](Images/11-30-08.png)  
 
 <!--   
 ## \[{ \color{Green} Real \; \color{Red} And \; \color{magenta} Complex \quad \; \color{Brown} Matrix \;\; Transform  }\] 
 -->
 ![](Images/11-30-03.png)  
 
-  
-<!--         ##### \[ Part \; 1 \]    -->   
-<!--    ![](Images/11-30-09.png)     -->   
-##### $$Part \quad 2$$
+<!--         ##### \[ Part \; 1 \]    -->  
+<!--    ![](Images/11-30-09.png)     -->  
+<!--   ##### $$Part \quad 2$$   -->  
 
-####
+####  
 
----  
+---
 
 # $$時\quad頻\quad數\quad值\quad計\quad算$$   
 
 ### $$Precisely \quad Time \quad Frequency \quad Numerical \quad Computations$$  
-
 
 <!--      
 #########################################################
