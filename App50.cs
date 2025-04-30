@@ -1,73 +1,61 @@
-﻿// 
-// 參考 https://en.wikipedia.org/wiki/Time-frequency_analysis 
-// 其中的實例。 y(t) = cos(pi*t) + cos(3*pi*t) + cos(2*pi*t)  且 0 <= t  。 
-// 
+﻿// 參考 https://en.wikipedia.org/wiki/Time-frequency_analysis 
+// y(t) = cos(pi*t)       0 <= t < 10 
+// y(t) = cos(3*pi*t)    10 <= t < 20 
+// y(t) = cos(2*pi*t)    20 <= t 
 
-using System;
-using System.IO;
 using Matrix_0; 
 
-namespace ConsoleApp50
+double step = 0.05;
+ReMatrix y;
+int iNum = (int)(30 / step) + 1;
+ReMatrix Mat = new ReMatrix(iNum, 2);
+
+for (int i = 0; i != iNum; i++)
 {
-	internal class Program
-	{
-		static void Main(string[] args)
-		{			
-			double step = 0.09; 
-			ReMatrix y; 
-			int iNum = (int)(5/step); 
-			ReMatrix Mat = new ReMatrix(iNum, 2); 
+    double t = step * i;
+    double[,] t2 = { { t } };
+    ReMatrix tMat = (ReMatrix)t2;
 
-			for(int i = 0; i != iNum; i++)
-			{
-				double t = step * i ; 
-			    double[,] t2 = { { t } };
-				ReMatrix tMat = (ReMatrix)t2; 
-
-				double[,] y1 = { { Math.Cos(1 * Math.PI * t) } };
-				double[,] y2 = { { Math.Cos(3 * Math.PI * t) } };
-				double[,] y3 = { { Math.Cos(2 * Math.PI * t) } };
-				y = (ReMatrix)y1 + y2 + y3;
-
-				Mat[i, 0] = tMat; 
-				Mat[i, 1] = y; 
-			} 
-			Console.WriteLine("**  時頻分析【輸出的數值結果】 (方法一)  **\n"); 
-			Console.WriteLine("            t             y(振幅）   \n"); 
-			Console.WriteLine("\n{0}\n", new PR(Mat));  
-
-			Console.WriteLine("\n=============================================\n\n");  
-
-			for (int i = 0; i != iNum; i++)
-			{
-				double t = step * i;
-				double[,] t2 = { { t } }; 
-				ReMatrix tMat = (ReMatrix)t2; 
-
-				double[,] y1 = { { Math.Cos(1 * Math.PI * t) } };
-				double[,] y2 = { { Math.Cos(3 * Math.PI * t) } };
-				double[,] y3 = { { Math.Cos(2 * Math.PI * t) } };
-
-				// D 
-				ReMatrix D = new ReMatrix(3, 3); 
-				D[0, 0] = (ReMatrix)y1; 
-				D[1, 1] = (ReMatrix)y2; 
-				D[2, 2] = (ReMatrix)y3; 
-				// Q特徵向量(Identity Matrix) 
-				Iden I = new Iden(3, 3); 
-				ReMatrix Q = I.Matrix; 
-				// d 
-				double[,] d = {{1}, {1}, {1} };
-				y = Q * D * d;
-				y = y[0, 0] + y[1, 0] + y[2, 0]; 
-				
-				Mat[i, 0] = tMat; 
-				Mat[i, 1] = y; 
-			}
-			Console.WriteLine("**  時頻分析【輸出的數值結果】 (方法二) **\n");
-			Console.WriteLine("            t             y(振幅）   \n");
-			Console.WriteLine("\n{0}\n", new PR(Mat));
-		}
-	}
+    if( (0 <= t) && (t < 10))
+    { 
+        double yTemp = Math.Cos(1 * Math.PI * t);
+        double[,] yTemp2 = { { yTemp } };
+        y = (ReMatrix)yTemp2; 
+     }
+    else if( (10 <= t) && (t < 20))
+    { 
+        double yTemp = Math.Cos(3 * Math.PI * t);
+        double[,] yTemp2 = { { yTemp } };
+        y = (ReMatrix)yTemp2; 
+    }
+    else
+    {  
+        double yTemp = Math.Cos(2 * Math.PI * t);
+        double[,] yTemp2 = { {yTemp} };
+        y = (ReMatrix)yTemp2; 
+    }
+    Mat[i, 0] = tMat;
+    Mat[i, 1] = y;
 }
-//  ** 數值的輸出結果，請參見儲存庫中的程式碼 ** 
+Console.Write("         t(時間)          y(振幅）   ");
+Console.Write("\n{0}", new PR(Mat));
+// 列印時間和變位序列 
+Console.Write("\n時間序列\n{0}", new PR4(Mat, 0));
+Console.Write("\n位移序列\n{0}", new PR4(Mat, 1));
+
+/* 輸出結果 ：
+         t(時間)          y(振幅）
+        0.00000          1.00000
+        0.05000          0.98769
+        0.10000          0.95106
+        0.15000          0.89101
+            .
+            .
+            .
+            .
+   1.0000,   0.9511,   0.8090,   0.5878,   0.3090,
+   0.0000,  -0.3090,  -0.5878,  -0.8090,  -0.9511,
+  -1.0000,  -0.9511,  -0.8090,  -0.5878,  -0.3090,
+   0.0000,   0.3090,   0.5878,   0.8090,   0.9511,
+   1.0000,
+*/
