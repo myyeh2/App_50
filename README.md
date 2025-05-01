@@ -5,7 +5,6 @@
 -->  
 ![](Images/11-10-01.png) 
 
-
 <!--         
 #### \[{  \color{Fuchsia} 【 \color{Green}  Sharp \; Matrix \; Solver \;  \color{Brown} \iff  \;  \color{Red} S\;M\;S】 }\]  
 -->  
@@ -18,7 +17,6 @@
 -->
 ![](Images/11-30-01.png)  
 
- 
 <!--     ##### \[ using \]   -->
 ![](Images/11-30-07.png)  
 
@@ -118,11 +116,12 @@ $ \color{red} C(t) = \begin{bmatrix} 35 & -1-13.2 \times sin(0.35 \times t) & -0
 #####################################################################################
 -->
 
+<!--   
 ## \[ \color{Red}已知實例如下 ：\]  
 
 ## \[  \color{Red} y(t) = \begin{Bmatrix} cos(1 \times \pi \times t ) \quad 0 \leq t < 10 \\\\ cos(3 \times \pi \times t) \quad 10 \leq t < 20  \\\\ cos(2 \times \pi \times t) \quad 20 \leq t  \end{Bmatrix}  \]  
-
-![](Images/02-06-03.png)
+-->
+![](Images/25-05-01-05.png)
 
 ---
 
