@@ -128,8 +128,12 @@ $ \color{red} C(t) = \begin{bmatrix} 35 & -1-13.2 \times sin(0.35 \times t) & -0
 ## [參見 https://en.wikipedia.org/wiki/Time-frequency_analysis](https://en.wikipedia.org/wiki/Time-frequency_analysis)
 
 ![](Images/Asterisk_02.png)
+<!--    
+# \[ \color{Brown}結 \qquad 論 \qquad 如 \qquad 下 ：\]  
+-->
+![](Images/25-05-01-06.png)
 
-# \[ 結 \qquad 論 \qquad 如 \qquad 下 ：\]
+![](Images/Asterisk_02.png)
 
 ### **1. y是輸出響應值。** 
 
