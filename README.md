@@ -1,7 +1,6 @@
 <!--     範例 App_50        -->
 
-### 
-<!--                 
+<!-- 
 # \[{  \color{Fuchsia}精\;銳\; \color{Purple}矩\;陣\;  \color{Red}計\;算\; \color{Green} 求\;解\;器  }\] 
 -->  
 ![](Images/11-10-01.png) 
@@ -43,10 +42,11 @@
 ####  
 
 ---
-
-# $$時\quad頻\quad數\quad值\quad計\quad算$$   
-
-### $$Precisely \quad Time \quad Frequency \quad Numerical \quad Computations$$  
+<!--  
+# \[ \color{Green} 時\quad頻\quad數\quad值\quad計\quad算 \]  
+### \[ \color{Green} Precisely \quad Time \quad Frequency \quad Numerical \quad Computations \]  
+-->
+![](Images/25-05-01-03.png)
 
 <!--      
 #########################################################
@@ -118,42 +118,109 @@ $ \color{red} C(t) = \begin{bmatrix} 35 & -1-13.2 \times sin(0.35 \times t) & -0
 #####################################################################################
 -->
 
-##  
+## \[ \color{Red}已知實例如下 ：\]  
 
-# $$本實例程式碼 \quad 請參見本儲存庫$$ 
+## \[  \color{Red} y(t) = \begin{Bmatrix} cos(1 \times \pi \times t ) \quad 0 \leq t < 10 \\\\ cos(3 \times \pi \times t) \quad 10 \leq t < 20  \\\\ cos(2 \times \pi \times t) \quad 20 \leq t  \end{Bmatrix}  \]  
 
-## $$已知實例如下 ：$$
+![](Images/02-06-03.png)
 
-<!--  
-# $$\color{Red} y(t) = \begin{Bmatrix} cos(1 \times \pi \times t ) \\\\ cos(3 \times \pi \times t) \\\\ cos(2 \times \pi \times t) \end{Bmatrix} \quad t \geq 0$$   
---> 
-![](Images/02-06-03.png)  
+---
 
-##  [參見 https://en.wikipedia.org/wiki/Time-frequency_analysis](https://en.wikipedia.org/wiki/Time-frequency_analysis)  
+## [參見 https://en.wikipedia.org/wiki/Time-frequency_analysis](https://en.wikipedia.org/wiki/Time-frequency_analysis)
 
-#   
+![](Images/Asterisk_02.png)
 
-# $$結 \qquad 論 \qquad 如 \qquad 下 ：$$
+# \[ 結 \qquad 論 \qquad 如 \qquad 下 ：\]
 
 ### **1. y是輸出響應值。** 
 
 ### **2. 已知角頻率分別是 1 X Pi，3 X Pi，和 2 X Pi，故不是好的時頻，數值計算的實例。**
 
-### **3. 參見App_48儲存庫，由微分方程式，求得實數系統矩陣A，再求得複數特徵值矩陣D，和複數特徵向量矩陣Q。**  
+### **3. 參見App_48儲存庫，由微分方程式，求得實數系統矩陣A，再求得複數特徵矩陣D，和複數模態矩陣Q。**  
 
-### **4. 特徵值矩陣的虛數部分即角頻率。**  
+### **4. 複數特徵值矩陣的虛數部分即角頻率。**  
 
-### **5. 使用Hexp(D, Q, t)轉換矩陣【系由本人推導和CSharp程式碼撰寫】。**
+### **5. 使用Hexp(D, Q, t)轉換矩陣可求得實數的響應值，參見Hexp(D, Q, d)的推導、求取係數向量d、和CSharp程式碼。**
 
-### **6. 求得多個不同狀態變數的響應值，參見 App_6J ... App_48 儲存庫中的程式碼**
+### **6. 多個不同狀態變數的響應值，參見 App_6J ... App_48 儲存庫中的程式碼。**
 
-#  
+---
 
----  
+![](Images/Asterisk_01.png) 
 
-#
+![](Images/25-05-01-01.png)
+
+![](Images/25-05-01-02.png)
+
+![](Images/Asterisk_02.png)
+
+```C#
+// 參考 https://en.wikipedia.org/wiki/Time-frequency_analysis 
+// y(t) = cos(pi*t)       0 <= t < 10 
+// y(t) = cos(3*pi*t)    10 <= t < 20 
+// y(t) = cos(2*pi*t)    20 <= t 
+
+using Matrix_0; 
+
+double step = 0.05;
+ReMatrix y;
+int iNum = (int)(30 / step) + 1;
+ReMatrix Mat = new ReMatrix(iNum, 2);
+
+for (int i = 0; i != iNum; i++)
+{
+    double t = step * i;
+    double[,] t2 = { { t } };
+    ReMatrix tMat = (ReMatrix)t2;
+
+    if( (0 <= t) && (t < 10))
+    { 
+        double yTemp = Math.Cos(1 * Math.PI * t);
+        double[,] yTemp2 = { { yTemp } };
+        y = (ReMatrix)yTemp2; 
+     }
+    else if( (10 <= t) && (t < 20))
+    { 
+        double yTemp = Math.Cos(3 * Math.PI * t);
+        double[,] yTemp2 = { { yTemp } };
+        y = (ReMatrix)yTemp2; 
+    }
+    else
+    {  
+        double yTemp = Math.Cos(2 * Math.PI * t);
+        double[,] yTemp2 = { {yTemp} };
+        y = (ReMatrix)yTemp2; 
+    }
+    Mat[i, 0] = tMat;
+    Mat[i, 1] = y;
+}
+Console.Write("         t(時間)          y(振幅）   ");
+Console.Write("\n{0}", new PR(Mat));
+// 列印時間和變位序列 
+Console.Write("\n時間序列\n{0}", new PR4(Mat, 0));
+Console.Write("\n位移序列\n{0}", new PR4(Mat, 1));
+
+/* 輸出結果 ：
+         t(時間)          y(振幅）
+        0.00000          1.00000
+        0.05000          0.98769
+        0.10000          0.95106
+        0.15000          0.89101
+            .
+            .
+            .
+            .
+   1.0000,   0.9511,   0.8090,   0.5878,   0.3090,
+   0.0000,  -0.3090,  -0.5878,  -0.8090,  -0.9511,
+  -1.0000,  -0.9511,  -0.8090,  -0.5878,  -0.3090,
+   0.0000,   0.3090,   0.5878,   0.8090,   0.9511,
+   1.0000,
+*/
+```
+<!--  
+## \[ \color{Fuchsia} \ast \quad \ast \quad \ast \quad \ast \quad \ast \quad \ast \quad \ast \quad \ast \quad \ast \quad \ast \quad \ast  \]
+-->
+
+![](Images/Asterisk_02.png)
 
 ![](Images/name_card.png)  
-
-##
-##
